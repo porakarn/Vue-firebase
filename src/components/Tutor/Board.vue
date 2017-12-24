@@ -2,15 +2,27 @@
   <v-container>
     <v-layout row wrap v-for="course in courses" :key="course.id" class="mb-2">
       <v-flex xs12 sm10 md8 offset-sm1 offset-md2>
-        <v-card class="info">
-          <v-container fluid>
+        <v-card class="grey lighten-4">
+     
             <v-layout row>
              
-              <v-flex xs7 sm8 md9>
+              <v-flex xs12 sm12 md12 >
                 <v-card-title primary-title>
                   <div>
-                    <h5 class="white--text mb-0">{{ course.subject }}</h5>
-                    <div>{{ course.student }}</div>
+                    <div>{{ course.id }} :
+                      {{ course.subject }}
+                      {{ course.purpose }}
+                  / {{ course.tutor }}
+                    เพศติวเตอร์ {{ course.gendertutor }} /
+                      น้องผู้{{course.gender }}
+                   {{ course.gradeDetail }}
+                     {{ course.numberstudent }} คน
+                  ({{ course.school }}) /
+                    ที่ {{ course.location }}
+                   เรียน ({{ course.e6 }})
+                    เวลา {{ course.time }} /
+                    ค่าสอน {{ course.revenue }}
+                    ค่าแนะนำ {{ course.fee }}</div>
                   </div>
                 </v-card-title>
                 <!-- <v-card-actions>
@@ -21,7 +33,7 @@
                 </v-card-actions> -->
               </v-flex>
             </v-layout>
-          </v-container>
+       
         </v-card>
       </v-flex>
     </v-layout>
@@ -34,8 +46,14 @@ import axios from 'axios';
      name:'course',
     data() {
         return {
-            courses: null
-
+            courses: null,
+            id: null,
+            gendertutor: null,
+            gender: null,
+            numberstudent: null,
+            e6: null,
+            revenue: null,
+            fee: null
         }
     },
  created () {

@@ -21,12 +21,12 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark class="primary">
+    <v-toolbar dark class="teal lighten-2" >
       <v-toolbar-side-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up "></v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">DevMeetup</router-link>
+        <router-link to="/" tag="span" style="cursor: pointer">Sorns Tutor</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
@@ -50,8 +50,37 @@
       </v-toolbar-items>
     </v-toolbar>
     <main>
-      <router-view></router-view>
+      <router-view></router-view> <br><br><br><br>
+   <!-- <v-card fixed>
+    <v-bottom-nav
+     class="opp"
+      shift
+      :value="true"
+      :active.sync="e3"
+     
+    >
+      <v-btn >
+        <span>Video</span>
+        <v-icon>ondemand_video</v-icon>
+      </v-btn>
+      <v-btn >
+        <span>Music</span>
+        <v-icon>music_note</v-icon>
+      </v-btn>
+      <v-btn>
+        <span>Book</span>
+        <v-icon>book</v-icon>
+      </v-btn>
+      <v-btn >
+        <span>Image</span>
+        <v-icon>image</v-icon>
+      </v-btn>
+    </v-bottom-nav>
+  </v-card> -->
     </main>
+
+
+
   </v-app>
 </template>
 
@@ -59,8 +88,10 @@
   export default {
     data () {
       return {
-        sideNav: false
-      }
+        sideNav: false,
+      //     e3: 1,
+      //   e31: true
+       }
     },
     computed: {
       menuItems () {
@@ -91,4 +122,18 @@
 
 <style lang="stylus">
   @import './stylus/main'
+
+  .opp{
+      background-color: #F8F8F8;
+    border-color: #E7E7E7;
+  }
+
+ 
 </style>
+
+
+
+// style="  z-index: 1;
+    
+//    box-shadow: 0 2px 3px rgba(0,0,0,0.16), 0 2px 3px rgba(0,0,0,0.23);
+//     "
