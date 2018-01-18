@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="font-family: kanit">
     <v-navigation-drawer temporary v-model="sideNav">
       <v-list>
         <v-list-tile
@@ -21,16 +21,17 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark class="teal lighten-2" >
+    <v-toolbar dark  style=" background-color: #1DBA9C" >
       <v-toolbar-side-icon
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up "></v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">Sorns Tutor</router-link>
+
+        <router-link class="sorns"  to="/" tag="span"   style="cursor: pointer; font-family: kanit">Sorns</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
-        <v-btn
+      <v-toolbar-items dark class="hidden-xs-only" >
+        <v-btn style="font-family: kanit"
           flat
           v-for="item in menuItems"
           :key="item.title"
@@ -49,8 +50,33 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
+       <v-tabs fixed centered>
+         
+    <v-tabs-bar  style=" background-color: #1DBA9C" dark >
+      <v-tabs-slider class="yellow"></v-tabs-slider>
+      <v-tabs-item
+        v-for="i in items"
+        :key="i"
+        :href="'#tab-' + i"
+      >
+        {{ i }}
+      </v-tabs-item>
+    </v-tabs-bar>
+    <v-tabs-items>
+      <v-tabs-content
+        v-for="i in items"
+        :key="i"
+        :id="'tab-' + i"
+      >
+  
+      </v-tabs-content>
+    </v-tabs-items>
+  </v-tabs>
+
     <main>
-      <router-view></router-view> <br><br><br><br>
+      <router-view>
+ 
+    </router-view> <br><br><br><br>
    <!-- <v-card fixed>
     <v-bottom-nav
      class="opp"
@@ -77,8 +103,11 @@
       </v-btn>
     </v-bottom-nav>
   </v-card> -->
-    </main>
 
+    </main>
+ 
+    
+    
 
 
   </v-app>
@@ -88,6 +117,9 @@
   export default {
     data () {
       return {
+      
+        items: ['สมัครติวเddddตอร์', 'จองงาน', 'ดูเอกสารสอน']
+      ,
         sideNav: false,
       //     e3: 1,
       //   e31: true
@@ -118,6 +150,9 @@
       }
     }
   }
+
+
+ 
 </script>
 
 <style lang="stylus">
@@ -131,9 +166,18 @@
  
 </style>
 
+.sorns{
+  font-family: arial,
+  color: green
+}
 
 
 // style="  z-index: 1;
     
 //    box-shadow: 0 2px 3px rgba(0,0,0,0.16), 0 2px 3px rgba(0,0,0,0.23);
 //     "
+
+
+
+
+     

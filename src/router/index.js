@@ -9,6 +9,9 @@ import Signin from '@/components/User/Signin'
 import Meetup from '@/components/Meetup/Meetup'
 import Register from '@/components/Student/Register'
 import Board from '@/components/Tutor/Board'
+import We from '@/components/Tutor/We'
+import Createsheet from '@/components/Tutor/Createsheet'
+import Sheet from '@/components/Tutor/Sheet'
 import AuthGuard from './auth-guard'
 
 Vue.use(Router)
@@ -62,7 +65,24 @@ export default new Router({
       path: '/board',
       name: 'Board',
       component: Board
-    }
+    },
+     {
+       path: '/test',
+       name: 'We',
+       component: We
+     },
+
+    {
+      path: '/createsheet',
+      name: 'Createsheet',
+      component: Createsheet
+    },
+     {
+       path: '/sheet',
+       name: 'Sheet',
+       component: Sheet
+     }
+
   ],
   mode: 'history'
 })

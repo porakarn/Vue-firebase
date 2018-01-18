@@ -1,38 +1,110 @@
 <template>
-<div>
-      <section>
-          <v-parallax src="https://www.wisble.com/dist/assets/banner-1.eb61e53a70ef37214b6f1c5314e9be59.jpg" height="600">
-            <v-layout
-              column
-              align-center
-              justify-center
-              class="white--text"
-            >
-            
-              <h1 class="white--text mb-2 display-1 text-xs-center">ค้นหาติวเตอร์ เรียนพิเศษ </h1>
-              <div class="subheading mb-3 text-xs-center">Powered by Sorns Tutor</div>
-              <v-btn
-                class="blue lighten-2 mt-5"
-                dark
-                large
-                href="/pre-made-themes"
-              >
-                Get Started
-              </v-btn>
-            </v-layout>
-          </v-parallax>
-        </section>
+<div> 
      
+         
+  
+ <v-card-media class="hidden-xs-only"  src="http://35.226.232.90/wp-content/uploads/2018/01/sornsl.jpg" height="600px">
+ </v-card-media>
+ <v-card-media class="hidden-md-and-up"  src="http://35.226.232.90/wp-content/uploads/2018/01/sornsl.jpg" height="200px">
+ </v-card-media>
+  
+   <v-container>
+<v-tabs fixed icons centered>
+    <v-tabs-bar dark class="white">
+      <v-tabs-slider class="yellow"></v-tabs-slider>
+      <v-tabs-item href="#tab-1">
+        <v-icon>phone</v-icon>
+        สมัครติวเตอร์
+      </v-tabs-item>
+      <v-tabs-item href="#tab-2">
+        <v-icon>favorite</v-icon>
+        จองงาน
+      </v-tabs-item>
+      <v-tabs-item href="#tab-3">
+        <v-icon>account_box</v-icon>
+        ดูเอกสาร
+      </v-tabs-item>
+     
+    </v-tabs-bar>
+    <v-tabs-items>
+      <v-tabs-content
+        v-for="i in 3"
+        :key="i"
+        :id="'tab-' + i"
+      >
+      
+      </v-tabs-content>
+    </v-tabs-items>
+  </v-tabs>
+  <br>
+  <v-tabs fixed icons centered>
+    <v-tabs-bar dark class="white">
+      <v-tabs-slider class="yellow"></v-tabs-slider>
+      <v-tabs-item href="#tab-1">
+        <v-icon>phone</v-icon>
+        สมัครติวเตอร์
+      </v-tabs-item>
+      <v-tabs-item href="#tab-2">
+        <v-icon>favorite</v-icon>
+        จองงาน
+      </v-tabs-item>
+      <v-tabs-item href="#tab-3">
+        <v-icon>account_box</v-icon>
+        ดูเอกสาร
+      </v-tabs-item>
+     
+    </v-tabs-bar>
+    <v-tabs-items>
+      <v-tabs-content
+        v-for="i in 3"
+        :key="i"
+        :id="'tab-' + i"
+      >
+      
+      </v-tabs-content>
+    </v-tabs-items>
+  </v-tabs>
+ <br>
+<v-tabs fixed icons centered>
+    <v-tabs-bar dark class="white">
+      <v-tabs-slider class="yellow"></v-tabs-slider>
+      <v-tabs-item href="#tab-1">
+        <v-icon>phone</v-icon>
+        สมัครติวเตอร์
+      </v-tabs-item>
+      <v-tabs-item href="#tab-2">
+        <v-icon>favorite</v-icon>
+        จองงาน
+      </v-tabs-item>
+      <v-tabs-item href="#tab-3">
+        <v-icon>account_box</v-icon>
+        ดูเอกสาร
+      </v-tabs-item>
+     
+    </v-tabs-bar>
+    <v-tabs-items>
+      <v-tabs-content
+        v-for="i in 3"
+        :key="i"
+        :id="'tab-' + i"
+      >
+      
+      </v-tabs-content>
+    </v-tabs-items>
+  </v-tabs>
 
-  <v-container>
+
+<br> <br><br> <br> <br>
     <v-layout row wrap>
-        <v-flex xs12 sm6 class="text-xs-center text-sm-right">
+        <v-flex xs12 sm4 class="text-xs-center text-sm-right">
         <v-btn large router to="/register" class="info">สมัครเรียน</v-btn>
       </v-flex>
-        <v-flex xs12 sm6 class="text-xs-center text-sm-left">
+        <v-flex xs12 sm4 class="text-xs-center text-sm-left">
+             <v-btn large router to="/sheet" class="info">เอกสารการสอน</v-btn>
         <v-btn large router to="/board" class="info">ดูงาน</v-btn>
+       
       </v-flex>
-     
+    
     </v-layout>
     
   </v-container>
@@ -41,6 +113,19 @@
 
 <script>
   export default {
+     data () {
+      return {
+        items: [
+          {
+            src: 'http://35.226.232.90/wp-content/uploads/2018/01/sornsl.jpg'
+          },
+          {
+            src: 'http://35.226.232.90/wp-content/uploads/2018/01/sornsl.jpg'
+          }
+        
+        ]
+      }
+    },
     computed: {
       meetups () {
         return this.$store.getters.featuredMeetups
